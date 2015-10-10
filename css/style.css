@@ -1,23 +1,9 @@
-#high-hat{
+table{
+  width: 600px;
+  height: 600px;
+}
+.button{
   width: 150px;
   height: 150px;
   border-radius: 130px;
-}
-
-#snare-drum{
-  width: 130px;
-  height: 130px;
-  border-radius:130px;
-}
-
-#bass-drum{
-  width: 250px;
-  height: 250px;
-  border-radius: 250px;
-}
-
-#high-tom{
-  width: 140px;
-  height: 140px;
-  border-radius: 140px;
 }

@@ -34,7 +34,31 @@ $(function(){
               break;
       }
 })
+
+
+var buttons = document.getElementsByTagName("td");
+
+function start(){
+  soundManager.setup({
+      url: "/swf/",
+      preferFlash: true
+  });
+
+  for(var i = buttons.length -1; i >= 0; i--){
+    buttons[i].addEventListener("click", playSong)
+  }
+
+  function playSong(){
+    soundManager.createSound({
+      id: event.target.getAttribute("data-song"),
+      url: "./sounds/" + event.target.getAttribute("data-song") + ".wav"
+    }).play();
+  }
+}
+start();
 })
+
+
 
 
 
