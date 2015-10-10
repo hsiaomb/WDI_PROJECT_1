@@ -1,44 +1,44 @@
 $(function(){
-  var doc = $('html')
-  doc.keypress(function(e){
+var game ={
+  keyboard: function(){$('html').keypress(function(e){
     e = e || window.event;
     switch (event.keyCode) {
       case 119:
-          console.log("W");
+          $("#high-tom").trigger("click");
           break;
       case 97:
-          console.log("A");
+          $("#high-hat").trigger("click");
           break;
       case 115:
-          console.log('S');
+          $("#snare-drum").trigger("click");
           break;
       case 100:
-          console.log('D');
+          $("#bass-drum").trigger("click");
           break;
 }
 })
+},
 
-  doc.keydown(function(e){
+  arrow: function(){$('html').keydown(function(e){
+    e = e || window.event;
   switch (event.keyCode) {
           case 37:
-              console.log("Left");
+             $("#high-hat").trigger("click");
               break;
           case 38:
-              console.log("Up");
+              $("#high-tom").trigger("click");
               break;
           case 39:
-              console.log('Right');
+              $("#bass-drum").trigger("click");
               break;
           case 40:
-              console.log('Down');
+              $("#snare-drum").trigger("click");
               break;
       }
 })
-
-
-var buttons = document.getElementsByTagName("td");
-
-function start(){
+},
+start: function(){
+  var buttons = document.getElementsByTagName("td");
   soundManager.setup({
       url: "/swf/",
       preferFlash: true
@@ -55,7 +55,10 @@ function start(){
     }).play();
   }
 }
-start();
+}
+game.start();
+game.arrow();
+game.keyboard();
 })
 
 
