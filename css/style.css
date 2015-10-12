@@ -1,9 +1,32 @@
-table{
-  width: 600px;
-  height: 600px;
+#high-hat{
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  background-color: #FB1468;
+  border: 5px solid black;
 }
-.button{
-  width: 150px;
-  height: 150px;
-  border-radius: 130px;
+
+#snare-drum{
+  width: 200px;
+  height: 200px;
+  border-radius:200px;
+  background-color: #14FFB2;
+  border: 5px solid black;
+}
+
+#bass-drum{
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  background-color: #9A6FFF;
+  border: 5px solid black;
+  margin: 500 auto;
+}
+
+#high-tom{
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  background-color: #FDFF74;
+  border: 5px solid black;
 }
