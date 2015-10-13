@@ -8,27 +8,25 @@ $(function(){
   $(buttons).on("click", playSong)
 
   function playSong(){
-    var song = $(this).attr("data-song");
+    song = $(this).attr("data-song");
+    var element = $(this)
+    element.addClass("hit");
+    setTimeout(function(){$(buttons).removeClass("hit")}, 200);
     soundManager.createSound({
       id: song,
       url: "./sounds/" + song + ".wav"
     }).play();
   }
-  $('h2').hide();
-  $('h3').hide();
-
+  $('h3').fadeTo(0,0);
+  $('h2').fadeTo(0,0);
 
   var game ={
 
     beatCounter: 1,
     playerOneSequence: [],
-    playerTwoSequence:[],
-    storedMoves:[],
     playerTwoRepeat:[],
     round: 0,
-    playerTwoScore: 0,
     roundNum: $('#0'),
-    playerTwoScoreboard: $('#2'),
     keyboardMap: {
      119:  "#high-tom",
      97: "#high-hat",
@@ -44,13 +42,18 @@ $(function(){
 
    startGame: function(){
     event.preventDefault();
-    $('h2').fadeIn();
-    $('h3').fadeIn();
-    $('#start').fadeOut();
+    $('#start').fadeTo(0,0,function(){
+      $(this).prop("disabled",true);
+    });
     game.round++;
-    game.roundNum.text(game.round);
-
+    game.roundNum.text("Round: "+game.round);
+    $('h3').fadeTo(0,1);
+    $('h2').fadeTo(0,1);
     game.playerOneToArray();
+    game.beatCounter= 1
+    game.playerOneSequence=[];
+    game.playerTwoRepeat=[];
+
 
   },
   playerOneToArray: function(){
@@ -61,11 +64,12 @@ $(function(){
      if (game.playerOneSequence.length === game.beatCounter){
       for (var i = 0; i < game.playerOneSequence.length; i++) {
         (function(index) {
-          setTimeout(function() {game.keyboardSequence(game.playerOneSequence[index]); }, i * 650);
+          setTimeout(function() {game.keyboardSequence(game.playerOneSequence[index]);  }, i * 650);
         })(i);
       }
       $(document).off('keypress');
       game.playerTwoRepeatArray();
+      $('#player').text("Player 2")
     };
 
   }
@@ -77,17 +81,19 @@ $(function(){
     if([37,38,39,40].indexOf(e.keyCode) !== -1){
      game.playerTwoRepeat.push(game.arrowMap[e.keyCode]);
      $(game.arrowMap[e.keyCode]).trigger("click");
-     console.log(game.playerTwoRepeat);
      for (var i = 0; i < game.playerTwoRepeat.length; i++) {
       console.log(game.playerTwoRepeat[i]);
       console.log(game.playerOneSequence[i]);
       if(game.playerTwoRepeat[i] !== game.playerOneSequence[i]) {
-        alert("you lose!");
+        soundManager.stop(song)
+        var audio = new Audio('./sounds/Wrong Buzzer.mp3');
+        audio.play();
+        game.gameOver();
+        $(document).off('keydown');
+
+
       }
       else if(game.playerTwoRepeat.slice(0,game.beatCounter).toString()=== game.playerOneSequence.slice(0,game.beatCounter).toString()){
-        alert("Nice! Next Round!");
-        game.playerTwoScore++;
-        game.playerTwoScoreboard.text(game.playerTwoScore);
         game.playerOneSequence;
         console.log(game.playerTwoRepeat);
         console.log(game.playerOneSequence);
@@ -109,15 +115,26 @@ $(function(){
   game.beatCounter++;
   game.playerOneToArray();
   game.round++;
-  game.roundNum.text(game.round);
+  game.roundNum.text("Round: "+game.round);
+  $('#player').text("Player 1");
   console.log(game.playerTwoRepeat);
   console.log(game.playerOneSequence);
   console.log(game.beatCounter)
-
 },
+
+  gameOver: function(){
+    game.roundNum.text("Game Over! You Reached Round: "+game.round);
+    $('#start').fadeTo(0,1).prop("disabled",false);
+    game.round = 0;
+
+  },
 
 keyboardSequence: function(id){
  $(id).trigger("click");
+ // $(id).addClass("hit");
+ // $(document).keyup(function(){
+ //  $(id).removeClass("hit");
+ // }
 },
 }
 $('#start').on('click', game.startGame);

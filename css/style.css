@@ -1,32 +1,124 @@
+@font-face {
+font-family: Inkredible;
+src: url("../fonts/Inkredible/Inkredible OTF/TF27 Inkredible Script.otf") format("opentype");
+}
+
+body{
+  margin: auto;
+  background-image: url("../images/background.jpg");
+  background-size: cover;   
+}
+
+img{
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.controls {
+  width: 380px;
+  text-align: left;
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif; 
+  margin: 0 auto;
+  color: white;
+}
+#playerOne{
+  position: relative;
+  margin-left: 40px;
+}
+
+#playerTwo{
+  position: relative;
+  margin-left: 700px;
+}
+#start{
+      padding: 20px 25px;
+      background: black;
+      color: white;
+      font-family: Inkredible, Helvetica, Verdana, Sans-Serif; 
+      border-radius: 5px; 
+      margin: 0 auto;
+}
+
+#start:hover{
+      background-color: #2D2731;
+      cursor: crosshair;
+}
+
+h1{
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif;
+  font-size: 100px;
+  text-align: center;
+  -webkit-margin-before: 0.15em;
+  -webkit-margin-after: 0.15em;
+  color: #C0F1DE;
+}
+
+h2{
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif;
+  text-align: center;
+  font-size:30px;
+  color: white;
+}
+h3{
+  font-size: 20px;
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif;
+  color:red;
+}
+table{
+  width: 500px;
+  margin: 0 auto;
+
+}
 #high-hat{
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
   background-color: #FB1468;
   border: 5px solid black;
 }
 
+td{
+  font-size: 30px;
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif;
+}
+tr{
+  width:120px;
+}
+
+.hit{
+  opacity: 0.5;
+  background-image:url("../images/fist.png");
+  background-size: cover;                   
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
 #snare-drum{
-  width: 200px;
-  height: 200px;
-  border-radius:200px;
+  width: 120px;
+  height: 120px;
+  border-radius:50px;
   background-color: #14FFB2;
   border: 5px solid black;
 }
 
 #bass-drum{
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
   background-color: #9A6FFF;
   border: 5px solid black;
   margin: 500 auto;
 }
 
 #high-tom{
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
   background-color: #FDFF74;
   border: 5px solid black;
 }
