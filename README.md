@@ -1,9 +1,9 @@
 Beat Repeat
 ===========
 
-A re-imagining of the classic game Simon Says/Bop-it. Two players in the game - One player sets the sequence, and the other repeats it! See if you got what it takes!
+A re-imagining of the classic game Simon Says/Bop-it. Two players in the game - One player sets the sequence, and the other repeats it! See if you got what it takes! Or Play against a Computer!
 
-![](http://i.imgur.com/Jgn5Dwg.jpg =500x)
+![]( =500x)
 
 Play online at https://boiling-dawn-4321.herokuapp.com/
 
