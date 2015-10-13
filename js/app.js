@@ -52,6 +52,7 @@ $(function(){
   startGame: function(){
     event.preventDefault();
     $('#start').prop("disabled",true);
+    $('#computer').prop("disabled",true);
     game.round = 1;
     game.roundNum.text("Round: "+game.round);
     $('.controls').show(0,0);
@@ -135,6 +136,7 @@ gameOver: function(){
 computerGame: function(){
   event.preventDefault();
   $('#computer').prop("disabled",true);
+  $('#start').prop("disabled",true);
   game.round = 1;
   game.roundNum.text("Round: "+game.round);
   $('#computerGame').hide();
