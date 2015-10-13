@@ -3,6 +3,20 @@ font-family: Inkredible;
 src: url("../fonts/Inkredible/Inkredible OTF/TF27 Inkredible Script.otf") format("opentype");
 }
 
+p{
+  -webkit-margin-before: 0.03em;
+  -webkit-margin-after: 0.03em;
+}
+#computer{
+  padding: 30px 40px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  font-family: Inkredible, Helvetica, Verdana, Sans-Serif; 
+  border-radius: 5px; 
+  margin: 0 auto;
+}
+
 body{
   margin: auto;
   background-image: url("../images/background.jpg");
@@ -24,6 +38,7 @@ img{
   font-family: Inkredible, Helvetica, Verdana, Sans-Serif; 
   margin: 0 auto;
   color: white;
+  font-size:20px;
 }
 #playerOne{
   position: relative;
@@ -35,15 +50,20 @@ img{
   margin-left: 700px;
 }
 #start{
-      padding: 20px 25px;
+      padding: 30px 40px;
       background: black;
       color: white;
+      font-size: 20px;
       font-family: Inkredible, Helvetica, Verdana, Sans-Serif; 
       border-radius: 5px; 
       margin: 0 auto;
 }
 
 #start:hover{
+      background-color: #2D2731;
+      cursor: crosshair;
+}
+#computer:hover{
       background-color: #2D2731;
       cursor: crosshair;
 }
@@ -62,6 +82,8 @@ h2{
   text-align: center;
   font-size:30px;
   color: white;
+  -webkit-margin-before: 0.1em;
+  -webkit-margin-after: 0.1em;
 }
 h3{
   font-size: 20px;
@@ -69,13 +91,13 @@ h3{
   color:red;
 }
 table{
-  width: 500px;
+  width: 800px;
   margin: 0 auto;
 
 }
 #high-hat{
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50px;
   background-color: #FB1468;
   border: 5px solid black;
@@ -99,16 +121,16 @@ tr{
 
 
 #snare-drum{
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius:50px;
   background-color: #14FFB2;
   border: 5px solid black;
 }
 
 #bass-drum{
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50px;
   background-color: #9A6FFF;
   border: 5px solid black;
@@ -116,8 +138,8 @@ tr{
 }
 
 #high-tom{
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50px;
   background-color: #FDFF74;
   border: 5px solid black;
